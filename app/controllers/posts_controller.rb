@@ -13,6 +13,16 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def index
+    @posts = Post.order(id: :asc)
+  end
+
+  def destroy
+      post = Post.find(params[:id])
+      post.destroy!
+      redirect_to root_path
+  end
+
   private
 
   def post_params
