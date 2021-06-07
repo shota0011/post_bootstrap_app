@@ -8,12 +8,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to post, notice: "投稿しました"
+      redirect_to @post, notice: "投稿しました"
     else
-      flash[:notice] = "投稿に失敗しました"
+      flash.now[:alert] = "投稿に失敗しました"
       render :new
     end
-
   end
 
   def show
@@ -36,10 +35,9 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: "更新しました"
     else
-      flash[:notice] = "更新に失敗しました"
+      flash.now[:alert] = "更新に失敗しました"
       render :edit
     end
-
   end
 
   private
