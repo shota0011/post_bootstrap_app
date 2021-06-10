@@ -16,8 +16,13 @@
 
   div.field_with_errors {
     display: contents;
+
+    input {
+      border: 2px solid red;
+    }
   }
 
-  input {
-    border: 2px solid red;
+  .base-container {
+    max-width: var(--breakpoint-lg);
+    padding: 30px 15px;
   }
