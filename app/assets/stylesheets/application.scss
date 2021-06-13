@@ -26,6 +26,11 @@
     input {
       border: 2px solid red;
     }
+
+    input,
+    textarea {
+      @extend .is-invalid;
+    }
   }
 
   .base-container {
